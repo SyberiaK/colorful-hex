@@ -1,0 +1,4 @@
+{
+  "modmenu.summaryTranslation.colorful_hex": "Makes HEX color tags in chat useful.",
+  "modmenu.descriptionTranslation.colorful_hex": "Makes HEX color tags in chat useful.\nYou can see what color is represented by HEX code and copy it to clipboard in one click.\n[WORKS ON CLIENT-SIDE ONLY]"
+}
