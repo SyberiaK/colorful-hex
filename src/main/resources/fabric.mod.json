@@ -9,7 +9,7 @@
     "SyberiaK"
   ],
   "contact": {
-    "homepage": "https://github.com/SyberiaK/colorful_hex",
+    "homepage": "https://modrinth.com/mod/colorful-hex",
     "issues": "https://github.com/SyberiaK/colorful_hex/issues",
     "sources": "https://github.com/SyberiaK/colorful_hex"
   },
@@ -29,7 +29,7 @@
 
   "depends": {
     "fabricloader": ">=0.14.11",
-    "minecraft": ">=1.19",
+    "minecraft": "1.19.3",
     "java": ">=17"
   }
 }
