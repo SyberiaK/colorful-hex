@@ -1,5 +1,6 @@
 package me.syberiak.colorful_hex;
 
+import java.util.List;
 import net.minecraft.text.Text;
 import net.minecraft.text.Style;
 import net.minecraft.text.TextColor;
@@ -7,69 +8,66 @@ import net.minecraft.text.HoverEvent;
 import net.minecraft.text.ClickEvent;
 import net.minecraft.text.MutableText;
 import net.fabricmc.api.ClientModInitializer;
+import net.fabricmc.fabric.api.client.item.v1.ItemTooltipCallback;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class ColorfulHEX implements ClientModInitializer {
-    public static final Logger LOGGER = LoggerFactory.getLogger("Colorful HEX");
+    public static final Logger LOGGER = LoggerFactory.getLogger(ColorfulHEX.class);
 
     @Override
-    public void onInitializeClient() { LOGGER.info("Initialized successfully."); }
+    public void onInitializeClient() {
+        ItemTooltipCallback.EVENT.register(TooltipManager::onItemTooltip);
+        LOGGER.info("Initialized successfully.");
+    }
 
-    public static Text parseMessagePart(Text part) {
-        Style style = part.getStyle();
-        String[] words = part.getString().split("\\s+");
+    public static Text formatHexColors(Text text) {
+        if (!text.getString().contains("#")) return text;
+
+        List<Text> textParts = text.withoutStyle();
         MutableText formattedText = Text.empty();
 
-        for (int i = 0; i < words.length; i++) {
-            if (i != 0) formattedText.append(" ");
-            String word = words[i];
-            Text formattedWord = word.contains("#") ? parseHexColor(word, style) : Text.literal(word).setStyle(style);
-            formattedText.append(formattedWord);
-        }
+        textParts.forEach(textPart -> formattedText.append(formatHexColorsPart(textPart)));
 
         return formattedText;
     }
 
-    public static Text parseHexColor(String word, Style baseStyle) {
-        /*
-         * The code is just a mess tbh
-         * TODO: try to refactor this crap
-         */
-        
-        if (!word.contains("#") || word.length() < 3) return Text.of(word);
+    public static Text formatHexColorsPart(Text text) {
+        Style style = text.getStyle();
+        String part = text.getString();
+        int startIndex = 0;
+        int sharpIndex = part.indexOf('#');
 
-        int codeStartInd = word.indexOf('#');
-        String hexCode = word.substring(codeStartInd);
+        MutableText formattedPart = Text.empty();
 
-        if (hexCode.length() <= 3 || (hexCode.length() > 7 && isHex(hexCode.substring(0, 8)))) {
-            return Text.of(word);
+        while (sharpIndex != -1) {
+            sharpIndex += startIndex;
+            formattedPart.append(Text.literal(part.substring(startIndex, sharpIndex)).setStyle(style));
+
+            startIndex = sharpIndex;
+            if (part.length() - sharpIndex >= 7 && isHexColor(part.substring(sharpIndex, sharpIndex + 7))) {
+                formattedPart.append(toStyledHexColor(part.substring(sharpIndex, sharpIndex + 7), style));
+                startIndex += 7;
+            } else if (part.length() - sharpIndex >= 4 &&isHexColor(part.substring(sharpIndex, sharpIndex + 4))) {
+                formattedPart.append(toStyledHexColor(part.substring(sharpIndex, sharpIndex + 4), style));
+                startIndex += 4;
+            }
+
+            if (startIndex >= part.length()) break;
+
+            sharpIndex = part.substring(startIndex).indexOf('#');
         }
 
-        int codeEndInd = Math.min(codeStartInd + 7, word.length());
-        
-        hexCode = hexCode.substring(0, codeEndInd - codeStartInd);
-        if (!isHexColor(hexCode)) {      
-            if (hexCode.length() >= 3 && isHex(hexCode.substring(0, 5))) return Text.of(word);
-
-            hexCode = hexCode.substring(0, 4);
-            codeEndInd = codeStartInd + 4;
-
-            if (!isHexColor(hexCode)) return Text.of(word); 
+        if (startIndex < part.length()) {
+            formattedPart.append(part.substring(startIndex));
         }
 
-        LOGGER.info("Got HEX color! " + hexCode);
-
-        MutableText textBeforeCode = Text.literal(word.substring(0, codeStartInd)).setStyle(baseStyle);
-        Text codeText = toStyledHex(hexCode, baseStyle);
-        MutableText textAfterCode = Text.literal(word.substring(codeEndInd)).setStyle(baseStyle);
-        
-        return textBeforeCode.append(codeText).append(textAfterCode);
+        return formattedPart;
     }
 
-    public static Text toStyledHex(String code) { return toStyledHex(code, Style.EMPTY); }
+    public static Text toStyledHexColor(String code) { return toStyledHexColor(code, Style.EMPTY); }
 
-    public static Text toStyledHex(String code, Style style) {
+    public static Text toStyledHexColor(String code, Style style) {
         if (!isHexColor(code)) return Text.literal(code).setStyle(style);
 
         String text = code;
@@ -77,8 +75,8 @@ public class ColorfulHEX implements ClientModInitializer {
             String r = code.substring(1, 2), g = code.substring(2, 3), b = code.substring(3, 4);
             code = "#" + r.repeat(2) + g.repeat(2) + b.repeat(2);
         }
-        
-        TextColor color = TextColor.parse(code);
+
+        TextColor color = TextColor.parse(code); //.result().orElseThrow();
         ClickEvent copyByClick = new ClickEvent(ClickEvent.Action.COPY_TO_CLIPBOARD, text);
         HoverEvent hintByHover = new HoverEvent(HoverEvent.Action.SHOW_TEXT, Text.literal("Click to copy!"));
         
@@ -88,9 +86,5 @@ public class ColorfulHEX implements ClientModInitializer {
 
     public static boolean isHexColor(String str) {
         return str.matches("#([0-9a-fA-F]{6}|[0-9a-fA-F]{3})");
-    }
-
-    public static boolean isHex(String str) {
-        return str.matches("#[0-9a-fA-F]+");
     }
 }

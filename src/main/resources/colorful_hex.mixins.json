@@ -6,9 +6,10 @@
   "mixins": [
   ],
   "client": [
+    "WrittenBookScreenMixin",
     "ChatHudMixin"
   ],
   "injectors": {
     "defaultRequire": 1
-	}
+  }
 }

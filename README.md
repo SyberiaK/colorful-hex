@@ -3,8 +3,8 @@ A Fabric client-side mod that makes HEX color tags in chat useful.
 
 You can see what color is represented by HEX code and copy it to clipboard in one click.
 
-![preview](media/preview.png)
-![whispering](media/whisper.png)
+![preview](https://github.com/SyberiaK/colorful-hex/blob/main/media/preview.png?raw=true)
+![whispering](https://github.com/SyberiaK/colorful-hex/blob/main/media/whisper.png?raw=true)
 
 ## FAQ
 
