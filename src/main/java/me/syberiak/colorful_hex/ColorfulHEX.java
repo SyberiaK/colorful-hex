@@ -38,11 +38,11 @@ public class ColorfulHEX implements ClientModInitializer {
         int startIndex = 0;
         int sharpIndex = part.indexOf('#');
 
-        MutableText formattedPart = Text.empty();
+        MutableText formattedPart = Text.empty().setStyle(style);
 
         while (sharpIndex != -1) {
             sharpIndex += startIndex;
-            formattedPart.append(Text.literal(part.substring(startIndex, sharpIndex)).setStyle(style));
+            formattedPart.append(Text.literal(part.substring(startIndex, sharpIndex)));
 
             startIndex = sharpIndex;
             if (part.length() - sharpIndex >= 7 && isHexColor(part.substring(sharpIndex, sharpIndex + 7))) {
@@ -51,6 +51,9 @@ public class ColorfulHEX implements ClientModInitializer {
             } else if (part.length() - sharpIndex >= 4 &&isHexColor(part.substring(sharpIndex, sharpIndex + 4))) {
                 formattedPart.append(toStyledHexColor(part.substring(sharpIndex, sharpIndex + 4), style));
                 startIndex += 4;
+            } else {
+                formattedPart.append(part.substring(sharpIndex, sharpIndex + 1));
+                startIndex += 1;
             }
 
             if (startIndex >= part.length()) break;
