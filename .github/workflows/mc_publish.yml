@@ -9,7 +9,20 @@ jobs:
     permissions:
       contents: write
     steps:
-      - name: mc-publish
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          submodules: true
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          java-version: 17
+          distribution: 'microsoft'
+      - name: Make Gradle Wrapper Executable
+        run: chmod +x ./gradlew
+      - name: Build
+        run: ./gradlew clean build
+      - name: Publish using mc-publish
         uses: Kir-Antipov/mc-publish@v3.3.0
         with:
           modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
