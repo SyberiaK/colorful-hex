@@ -4,14 +4,14 @@ A Fabric client-side mod that makes HEX color tags in chat useful.
 You can see what color is represented by HEX code in **the chat**,
 **written books** or **tooltips**.
 
-![preview](https://github.com/SyberiaK/colorful-hex/blob/main/media/preview.png?raw=true)
-![whispering](https://github.com/SyberiaK/colorful-hex/blob/main/media/whisper.png?raw=true)
-![book](https://github.com/SyberiaK/colorful-hex/blob/main/media/book.png?raw=true)
-![tooltip](https://github.com/SyberiaK/colorful-hex/blob/main/media/tooltip.png?raw=true)
+![preview](https://github.com/SyberiaK/colorful-hex/blob/main/media/preview.png?raw=true)\
+![whispering](https://github.com/SyberiaK/colorful-hex/blob/main/media/whisper.png?raw=true)\
+![book](https://github.com/SyberiaK/colorful-hex/blob/main/media/book.png?raw=true)\
+![tooltip](https://github.com/SyberiaK/colorful-hex/blob/main/media/tooltip.png?raw=true)\
 
 Also, you can **copy** any color code to your clipboard by **clicking it**.
 
-![copy](https://github.com/SyberiaK/colorful-hex/blob/main/media/tooltip.png?raw=true)
+![copy](https://github.com/SyberiaK/colorful-hex/blob/main/media/copy.png?raw=true)\
 
 
 ## FAQ
