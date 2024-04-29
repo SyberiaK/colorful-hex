@@ -26,10 +26,9 @@ Also, you can **copy** any color code to your clipboard by **clicking it**.
 This mod is client-side only, so the formatting shows up only for someone 
 **who installed this mod**.
 ### Is this mod compatible with *X* mod?
-> Any mod that doesn't change the chat input must work out of the box. \
-Sadly, I can't guarantee a compatibility with any *"chat revamp"* mod,
-even with the flexible implementation of ***Colorful HEX***, 
-as it's hard to test those things.
+> Any mod that doesn't change your chat messages, written books text or tooltips must work out of the box. \
+Sadly, I can't guarantee a compatibility with *any* mod,
+as it's hard to test everything.
 >
 > Anyway, you can try to do some tests with your favorite mods and 
 **send the results on GitHub.**
