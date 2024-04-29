@@ -48,7 +48,7 @@ public class ColorfulHEX implements ClientModInitializer {
             if (part.length() - sharpIndex >= 7 && isHexColor(part.substring(sharpIndex, sharpIndex + 7))) {
                 formattedPart.append(toStyledHexColor(part.substring(sharpIndex, sharpIndex + 7), style));
                 startIndex += 7;
-            } else if (part.length() - sharpIndex >= 4 &&isHexColor(part.substring(sharpIndex, sharpIndex + 4))) {
+            } else if (part.length() - sharpIndex >= 4 && isHexColor(part.substring(sharpIndex, sharpIndex + 4))) {
                 formattedPart.append(toStyledHexColor(part.substring(sharpIndex, sharpIndex + 4), style));
                 startIndex += 4;
             } else {
@@ -61,9 +61,7 @@ public class ColorfulHEX implements ClientModInitializer {
             sharpIndex = part.substring(startIndex).indexOf('#');
         }
 
-        if (startIndex < part.length()) {
-            formattedPart.append(part.substring(startIndex));
-        }
+        if (startIndex < part.length()) formattedPart.append(part.substring(startIndex));
 
         return formattedPart;
     }
@@ -79,7 +77,7 @@ public class ColorfulHEX implements ClientModInitializer {
             code = "#" + r.repeat(2) + g.repeat(2) + b.repeat(2);
         }
 
-        TextColor color = TextColor.parse(code); //.result().orElseThrow();
+        TextColor color = TextColor.parse(code).result().orElseThrow();
         ClickEvent copyByClick = new ClickEvent(ClickEvent.Action.COPY_TO_CLIPBOARD, text);
         HoverEvent hintByHover = new HoverEvent(HoverEvent.Action.SHOW_TEXT, Text.literal("Click to copy!"));
         
