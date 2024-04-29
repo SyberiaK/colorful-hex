@@ -1,17 +1,22 @@
 # Colorful HEX
+
+![Modrinth Downloads](https://img.shields.io/modrinth/dt/Vh8I4R2O?style=for-the-badge&logo=modrinth&color=00AF5C&link=https%3A%2F%2Fmodrinth.com%2Fmod%2Fcolorful-hex)
+![CurseForge Downloads](https://img.shields.io/curseforge/dt/783565?style=for-the-badge&logo=curseforge&color=F16436&link=https%3A%2F%2Fwww.curseforge.com%2Fminecraft%2Fmc-mods%2Fcolorful-hex)
+![GitHub source code](https://img.shields.io/badge/Source_code-Available-brightgreen?style=for-the-badge&logo=github&label=Source%20code&link=https%3A%2F%2Fgithub.com%2FSyberiaK%2Fcolorful-hex)
+
 A Fabric client-side mod that makes HEX color tags in chat useful.
 
 You can see what color is represented by HEX code in **the chat**,
 **written books** or **tooltips**.
 
-![preview](https://github.com/SyberiaK/colorful-hex/blob/release/1.19.2-1.20.2/media/preview.png?raw=true)\
-![whispering](https://github.com/SyberiaK/colorful-hex/blob/release/1.19.2-1.20.2/media/whisper.png?raw=true)\
-![book](https://github.com/SyberiaK/colorful-hex/blob/release/1.19.2-1.20.2/media/book.png?raw=true)\
-![tooltip](https://github.com/SyberiaK/colorful-hex/blob/release/1.19.2-1.20.2/media/tooltip.png?raw=true)
+![preview](https://github.com/SyberiaK/colorful-hex/blob/release/1.20.3-1.20.4/media/preview.png?raw=true)\
+![whispering](https://github.com/SyberiaK/colorful-hex/blob/release/1.20.3-1.20.4/media/whisper.png?raw=true)\
+![book](https://github.com/SyberiaK/colorful-hex/blob/release/1.20.3-1.20.4/media/book.png?raw=true)\
+![tooltip](https://github.com/SyberiaK/colorful-hex/blob/release/1.20.3-1.20.4/media/tooltip.png?raw=true)
 
 Also, you can **copy** any color code to your clipboard by **clicking it**.
 
-![copy](https://github.com/SyberiaK/colorful-hex/blob/release/1.19.2-1.20.2/media/copy.png?raw=true)
+![copy](https://github.com/SyberiaK/colorful-hex/blob/release/1.20.3-1.20.4/media/copy.png?raw=true)
 
 
 ## FAQ
