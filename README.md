@@ -7,11 +7,11 @@ You can see what color is represented by HEX code in **the chat**,
 ![preview](https://github.com/SyberiaK/colorful-hex/blob/release/1.19.2-1.20.2/media/preview.png?raw=true)\
 ![whispering](https://github.com/SyberiaK/colorful-hex/blob/release/1.19.2-1.20.2/media/whisper.png?raw=true)\
 ![book](https://github.com/SyberiaK/colorful-hex/blob/release/1.19.2-1.20.2/media/book.png?raw=true)\
-![tooltip](https://github.com/SyberiaK/colorful-hex/blob/release/1.19.2-1.20.2/media/tooltip.png?raw=true)\
+![tooltip](https://github.com/SyberiaK/colorful-hex/blob/release/1.19.2-1.20.2/media/tooltip.png?raw=true)
 
 Also, you can **copy** any color code to your clipboard by **clicking it**.
 
-![copy](https://github.com/SyberiaK/colorful-hex/blob/release/1.19.2-1.20.2/media/copy.png?raw=true)\
+![copy](https://github.com/SyberiaK/colorful-hex/blob/release/1.19.2-1.20.2/media/copy.png?raw=true)
 
 
 ## FAQ
