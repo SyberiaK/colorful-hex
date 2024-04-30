@@ -1,8 +1,8 @@
 # Colorful HEX
 
-![Modrinth Downloads](https://img.shields.io/modrinth/dt/Vh8I4R2O?style=for-the-badge&logo=modrinth&color=00AF5C&link=https%3A%2F%2Fmodrinth.com%2Fmod%2Fcolorful-hex)
-![CurseForge Downloads](https://img.shields.io/curseforge/dt/783565?style=for-the-badge&logo=curseforge&color=F16436&link=https%3A%2F%2Fwww.curseforge.com%2Fminecraft%2Fmc-mods%2Fcolorful-hex)
-![GitHub source code](https://img.shields.io/badge/Source_code-Available-brightgreen?style=for-the-badge&logo=github&label=Source%20code&link=https%3A%2F%2Fgithub.com%2FSyberiaK%2Fcolorful-hex)
+[![Modrinth Downloads](https://img.shields.io/modrinth/dt/Vh8I4R2O?style=for-the-badge&logo=modrinth&color=00AF5C)](https://modrinth.com/mod/colorful-hex)
+[![CurseForge Downloads](https://img.shields.io/curseforge/dt/783565?style=for-the-badge&logo=curseforge&color=F16436)](https://www.curseforge.com/minecraft/mc-mods/colorful-hex)
+[![GitHub source code](https://img.shields.io/badge/Source_code-Available-brightgreen?style=for-the-badge&logo=github&label=Source%20code)](https://github.com/SyberiaK/colorful-hex)
 
 A Fabric client-side mod that makes HEX color tags in chat useful.
 
