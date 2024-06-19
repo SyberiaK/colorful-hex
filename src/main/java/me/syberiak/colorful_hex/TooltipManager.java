@@ -3,8 +3,8 @@ package me.syberiak.colorful_hex;
 import java.util.ArrayList;
 import java.util.List;
 
-import net.minecraft.client.item.TooltipType;
 import net.minecraft.item.Item;
+import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.text.Text;
 import net.minecraft.item.ItemStack;
 
