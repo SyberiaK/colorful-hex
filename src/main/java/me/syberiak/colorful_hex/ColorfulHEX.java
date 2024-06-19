@@ -21,7 +21,7 @@ public class ColorfulHEX implements ClientModInitializer {
         LOGGER.info("Initialized successfully.");
     }
 
-    public static Text formatHexColors(Text text) {
+    public static MutableText formatHexColors(MutableText text) {
         if (!text.getString().contains("#")) return text;
 
         List<Text> textParts = text.withoutStyle();
@@ -30,6 +30,10 @@ public class ColorfulHEX implements ClientModInitializer {
         textParts.forEach(textPart -> formattedText.append(formatHexColorsPart(textPart)));
 
         return formattedText;
+    }
+
+    public static Text formatHexColors(Text text) {
+        return formatHexColors(text.copy());
     }
 
     public static Text formatHexColorsPart(Text text) {
@@ -79,7 +83,7 @@ public class ColorfulHEX implements ClientModInitializer {
 
         TextColor color = TextColor.parse(code).result().orElseThrow();
         ClickEvent copyByClick = new ClickEvent(ClickEvent.Action.COPY_TO_CLIPBOARD, text);
-        HoverEvent hintByHover = new HoverEvent(HoverEvent.Action.SHOW_TEXT, Text.literal("Click to copy!"));
+        HoverEvent hintByHover = new HoverEvent(HoverEvent.Action.SHOW_TEXT, Text.translatable("colorful_hex.click_to_copy"));
         
         return Text.literal(text).setStyle(style.withColor(color)
                     .withUnderline(true).withClickEvent(copyByClick).withHoverEvent(hintByHover));
